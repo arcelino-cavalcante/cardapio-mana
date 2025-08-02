@@ -1837,6 +1837,7 @@
                 const clientName = document.getElementById('client-name').value;
                 const address = document.getElementById('address').value;
                 const deliveryType = deliveryOption.options[deliveryOption.selectedIndex].text;
+
                 if (!clientName) {
                     alert("Por favor, informe seu nome.");
                     return;
@@ -1849,23 +1850,32 @@
                     alert("Por favor, selecione o sítio para entrega.");
                     return;
                 }
-                let message = `*Olá, Maná Snack House! Gostaria de fazer um pedido.*\n\n`;
-                message += `*Cliente:* ${clientName}\n\n`;
-                message += `*Itens do Pedido:*\n`;
-                orderItems.forEach(item => {
-                    message += `- ${item.quantity}x ${item.name} (${formatCurrency(item.price * item.quantity)})\n`;
-                });
-                message += `\n*Subtotal:* ${subtotalEl.textContent}\n`;
-                message += `*Taxa de Entrega:* ${deliveryFeeEl.textContent}\n`;
-                message += `*Total:* ${totalPriceEl.textContent}\n\n`;
-                message += `*Forma de Entrega:* ${deliveryType}\n`;
-                if (deliveryOption.value === 'sitio') {
-                    message += `*Sítio:* ${sitioList.options[sitioList.selectedIndex].text.split('-')[0].trim()}\n`;
-                }
+
+                let message = `🍔 *Novo Pedido Maná Snack House* 🍔\n\n`;
+                message += `👤 *Cliente:* ${clientName}\n`;
+
                 if (deliveryOption.value !== 'local') {
-                    message += `*Endereço/Referência:* ${address}\n`;
+                    message += `🏠 *Endereço/Referência:* ${address}\n`;
                 }
-                message += `\nObrigado!`;
+
+                if (deliveryOption.value === 'sitio') {
+                    message += `📍 *Sítio:* ${sitioList.options[sitioList.selectedIndex].text.split('-')[0].trim()}\n`;
+                }
+
+                message += `🚚 *Forma de Entrega:* ${deliveryType}\n\n`;
+                message += `------------------------------------\n\n`;
+                message += `📋 *Itens do Pedido:*\n`;
+                orderItems.forEach(item => {
+                    message += `   • ${item.quantity}x ${item.name} - ${formatCurrency(item.price * item.quantity)}\n`;
+                });
+                message += `\n------------------------------------\n\n`;
+                message += `💰 *Subtotal:* ${subtotalEl.textContent}\n`;
+                message += `🛵 *Taxa de Entrega:* ${deliveryFeeEl.textContent}\n`;
+                message += `------------------------------------\n`;
+                message += `*Total do Pedido:* *${totalPriceEl.textContent}*\n`;
+                message += `------------------------------------\n\n`;
+                message += `Agradecemos a preferência!`;
+
                 return encodeURIComponent(message);
             }
 
@@ -1916,7 +1926,7 @@
                 const message = generateWhatsAppMessage();
                 if (message) {
                     const phoneNumber = '5587920008169';
-                    const whatsappUrl = `httpshttps://wa.me/${phoneNumber}?text=${message}`;
+                                        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
                     window.open(whatsappUrl, '_blank');
                     confirmationModal.classList.remove('hidden');
                 }
