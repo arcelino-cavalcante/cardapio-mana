@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- PWA Meta Tags -->
+    <!-- PWA: INFORMAÇÕES DO APLICATIVO -->
+    <!-- Altere o <title> para o nome que aparecerá na aba do navegador. -->
     <title>Cardápio Maná</title>
+    <!-- Altere o content="" para a cor principal do seu app. -->
     <meta name="theme-color" content="#f97316" />
+    <!-- Altere o href="" para o link do ícone do seu app (192x192 pixels). -->
     <link rel="apple-touch-icon" href="https://placehold.co/192x192/000000/f97316?text=Man%C3%A1">
     <link rel="manifest" href="manifest.json">
 
@@ -18,22 +21,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Titan+One&display=swap"
         rel="stylesheet">
     <style>
+        /* ESTILOS E CORES GLOBAIS */
+        /* Para alterar as cores, modifique os códigos hexadecimais abaixo. */
+        /* Exemplo: #f97316 é o laranja principal. Você pode trocar por outra cor como #ff0000 (vermelho). */
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 84px;
-            /* Altura do cabeçalho principal */
         }
 
         @media (min-width: 768px) {
             html {
                 scroll-padding-top: 140px;
-                /* Altura do cabeçalho combinado no desktop */
             }
         }
 
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #000000;
+            /* Cor de fundo principal (preto) */
         }
 
         .brand-title {
@@ -49,17 +54,21 @@
             background: #1a1a1a;
         }
 
+        /* Fundo da barra de rolagem */
         ::-webkit-scrollbar-thumb {
             background: #f97316;
             border-radius: 10px;
         }
 
+        /* Cor da barra de rolagem (laranja) */
         ::-webkit-scrollbar-thumb:hover {
             background: #ea580c;
         }
 
+        /* Cor da barra de rolagem ao passar o mouse */
         .category-title {
             background: linear-gradient(to right, #f97316, #fb923c);
+            /* Gradiente do título da categoria (laranja) */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -68,10 +77,12 @@
             background-color: #111111;
         }
 
+        /* Cor de fundo dos cards de produto */
         .header-bg {
             background-color: #111111;
         }
 
+        /* Cor de fundo do cabeçalho */
         #category-nav-container::-webkit-scrollbar {
             display: none;
         }
@@ -86,10 +97,12 @@
             border-bottom: 2px solid #f97316;
         }
 
+        /* Cor do link ativo na navegação */
         .bottom-nav-btn.active {
             color: #f97316;
         }
 
+        /* Cor do ícone ativo no menu inferior */
         #category-modal,
         #ios-install-modal {
             transition: opacity 0.3s ease-in-out;
@@ -102,7 +115,7 @@
     </style>
 </head>
 
-<body class="text-white pb-24 md:pb-0">
+<body class="text-white pb-28 md:pb-0">
 
     <!-- Botão de Instalação PWA -->
     <button id="install-app-btn"
@@ -131,6 +144,10 @@
             <!-- Navegação de Categorias (Desktop) -->
             <nav id="category-nav" class="hidden md:block bg-black shadow-md">
                 <div id="category-nav-container" class="container mx-auto px-6 py-3 overflow-x-auto whitespace-nowrap">
+                    <!-- COMO ADICIONAR UMA NOVA CATEGORIA (DESKTOP) -->
+                    <!-- 1. Copie a linha abaixo. -->
+                    <!-- 2. Altere o href="#novo-id" para o ID da sua nova seção (ex: #pizzas). -->
+                    <!-- 3. Altere o texto "Hambúrgueres" para o nome da sua nova categoria (ex: Pizzas). -->
                     <a href="#hamburgueres"
                         class="category-link text-gray-300 hover:text-orange-400 px-4 py-2 transition-colors duration-300">Hambúrgueres</a>
                     <a href="#sanduiches"
@@ -143,6 +160,9 @@
                         class="category-link text-gray-300 hover:text-orange-400 px-4 py-2 transition-colors duration-300">Combos</a>
                     <a href="#sobremesas"
                         class="category-link text-gray-300 hover:text-orange-400 px-4 py-2 transition-colors duration-300">Sobremesas</a>
+                    <a href="#sobremesas_geladas"
+                        class="category-link text-gray-300 hover:text-orange-400 px-4 py-2 transition-colors duration-300">Sobremesas
+                        Geladas</a>
                     <a href="#bebidas"
                         class="category-link text-gray-300 hover:text-orange-400 px-4 py-2 transition-colors duration-300">Bebidas</a>
                 </div>
@@ -152,14 +172,32 @@
         <main class="container mx-auto p-4 md:p-6">
             <!-- Categorias -->
             <div id="menu-items">
-                <!-- Hambúrgueres -->
+
+                <!-- COMO ADICIONAR UMA NOVA CATEGORIA (SEÇÃO DE PRODUTOS) -->
+                <!-- 1. Copie todo este bloco de categoria, desde <div id="hamburgueres"... até o </div> de fechamento. -->
+                <!-- 2. Cole o bloco copiado abaixo de outra categoria. -->
+                <!-- 3. Altere o id="hamburgueres" para o mesmo ID que você usou no menu de navegação (ex: id="pizzas"). -->
+                <!-- 4. Altere o título "Hambúrgueres" para o nome da sua nova categoria. -->
+                <!-- 5. Adicione os produtos da nova categoria seguindo o modelo abaixo. -->
+
+                <!-- Seção de Hambúrgueres -->
                 <div id="hamburgueres" class="pt-4 pb-12 mb-12 border-b border-orange-900/50">
                     <h2 class="text-3xl font-bold mb-6 border-l-4 border-orange-500 pl-4 category-title">Hambúrgueres
                     </h2>
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+
+                        <!-- COMO ADICIONAR UM NOVO PRODUTO -->
+                        <!-- 1. Copie todo este bloco de produto, desde <div class="card-bg"... até o </div> de fechamento. -->
+                        <!-- 2. Cole o bloco dentro da grade de produtos da categoria desejada. -->
+                        <!-- 3. Altere o link da imagem em src="...". -->
+                        <!-- 4. Altere o Nome do Produto. -->
+                        <!-- 5. Altere a Descrição do Produto. -->
+                        <!-- 6. Altere o Preço (no span e na função addToOrder). -->
+                        <!-- 7. Na função addToOrder('Nome do Produto', PREÇO), certifique-se que o nome e o preço (use . para decimais) estão corretos. -->
+
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Hamb%C3%BArguer"
-                                alt="Imagem de Hambúrguer" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/hamburgues/Hamburguer.png" alt="Imagem de Hambúrguer"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Hambúrguer Especial Maná
                                 </h3>
@@ -175,8 +213,8 @@
                             </div>
                         </div>
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Hamb%C3%BArguer"
-                                alt="Imagem de Hambúrguer" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/hamburgues/Hamburguer.png" alt="Imagem de Hambúrguer"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Maná Artesanal Carne
                                 </h3>
@@ -192,8 +230,8 @@
                             </div>
                         </div>
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Hamb%C3%BArguer"
-                                alt="Imagem de Hambúrguer" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/hamburgues/Hamburguer.png" alt="Imagem de Hambúrguer"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Maná Crispy</h3>
                                 <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Peito de frango, queijo
@@ -208,8 +246,8 @@
                             </div>
                         </div>
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Hamb%C3%BArguer"
-                                alt="Imagem de Hambúrguer" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/hamburgues/Hamburguer.png" alt="Imagem de Hambúrguer"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Monster Maná</h3>
                                 <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Carne artesanal, ovo, bacon,
@@ -224,8 +262,8 @@
                             </div>
                         </div>
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Hamb%C3%BArguer"
-                                alt="Imagem de Hambúrguer" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/hamburgues/Hamburguer.png" alt="Imagem de Hambúrguer"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">BBQ Bacon</h3>
                                 <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Carne artesanal, molho
@@ -240,8 +278,8 @@
                             </div>
                         </div>
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Hamb%C3%BArguer"
-                                alt="Imagem de Hambúrguer" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/hamburgues/Hamburguer.png" alt="Imagem de Hambúrguer"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Maná Smash</h3>
                                 <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Carne, queijo, mussarela,
@@ -256,8 +294,8 @@
                             </div>
                         </div>
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Hamb%C3%BArguer"
-                                alt="Imagem de Hambúrguer" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/hamburgues/Hamburguer.png" alt="Imagem de Hambúrguer"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Duplo Cheese</h3>
                                 <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">2 carnes, queijo cheddar,
@@ -272,8 +310,8 @@
                             </div>
                         </div>
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Hamb%C3%BArguer"
-                                alt="Imagem de Hambúrguer" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/hamburgues/Hamburguer.png" alt="Imagem de Hambúrguer"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Cheese Rico</h3>
                                 <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Hambúrguer de Queijos e
@@ -294,8 +332,8 @@
                     <h2 class="text-3xl font-bold mb-6 border-l-4 border-orange-500 pl-4 category-title">Sanduíches</h2>
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Sandu%C3%ADche"
-                                alt="Imagem de Sanduíche" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/sanduiches/raw.jpg" alt="Imagem de Sanduíche"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Costela Californiana
                                 </h3>
@@ -311,10 +349,75 @@
                             </div>
                         </div>
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Sandu%C3%ADche"
-                                alt="Imagem de Sanduíche" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/sanduiches/raw.jpg" alt="Imagem de Sanduíche"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Frango Texano</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Sanduíche de 30cm 100%
+                                    artesanal.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 24,90</span>
+                                    <button onclick="addToOrder('Frango Texano', 24.90)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/sanduiches/raw.jpg" alt="Imagem de Sanduíche"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Copa tenessi</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Sanduíche de 30cm 100%
+                                    artesanal.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 24,90</span>
+                                    <button onclick="addToOrder('Frango Texano', 24.90)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/sanduiches/raw.jpg" alt="Imagem de Sanduíche"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Lombo Havai</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Sanduíche de 30cm 100%
+                                    artesanal.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 24,90</span>
+                                    <button onclick="addToOrder('Frango Texano', 24.90)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/sanduiches/raw.jpg" alt="Imagem de Sanduíche"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Vegetariano Gringo</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Sanduíche de 30cm 100%
+                                    artesanal.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 24,90</span>
+                                    <button onclick="addToOrder('Frango Texano', 24.90)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/sanduiches/raw.jpg" alt="Imagem de Sanduíche"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Pernil NY</h3>
                                 <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Sanduíche de 30cm 100%
                                     artesanal.</p>
                                 <div class="flex justify-between items-center mt-2">
@@ -333,12 +436,60 @@
                     <h2 class="text-3xl font-bold mb-6 border-l-4 border-orange-500 pl-4 category-title">Pastéis</h2>
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Pastel" alt="Imagem de Pastel"
+                            <img src="imagens/pastel/pastel.jpg" alt="Imagem de Pastel"
                                 class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Pastel de Carne</h3>
                                 <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Delicioso pastel com recheio
                                     de carne.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 14,00</span>
+                                    <button onclick="addToOrder('Pastel de Carne', 14.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/pastel/pastel.jpg" alt="Imagem de Pastel"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Pastel de Frango</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Delicioso pastel com recheio
+                                    de Frango.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 14,00</span>
+                                    <button onclick="addToOrder('Pastel de Carne', 14.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/pastel/pastel.jpg" alt="Imagem de Pastel"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Pastel de Queijo</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Delicioso pastel com recheio
+                                    de Queijo.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 14,00</span>
+                                    <button onclick="addToOrder('Pastel de Carne', 14.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/pastel/pastel.jpg" alt="Imagem de Pastel"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Pastel de Pizza</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Delicioso pastel com recheio
+                                    de Pizza.</p>
                                 <div class="flex justify-between items-center mt-2">
                                     <span class="font-bold text-md md:text-lg">R$ 14,00</span>
                                     <button onclick="addToOrder('Pastel de Carne', 14.00)"
@@ -355,15 +506,183 @@
                     <h2 class="text-3xl font-bold mb-6 border-l-4 border-orange-500 pl-4 category-title">Porções</h2>
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Porção" alt="Imagem de Porção"
+                            <img src="imagens/porcao/batatas.jpg" alt="Imagem de Porção"
                                 class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
-                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Batata Frita Média</h3>
-                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Uma porção generosa de
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Batata Frita Grande</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Uma porção Grande de
+                                    batatas fritas crocantes.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 15,00</span>
+                                    <button onclick="addToOrder('Batata Frita Média', 15.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/porcao/batatas.jpg" alt="Imagem de Porção"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Batata Frita Media</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Uma porção Media de
                                     batatas fritas crocantes.</p>
                                 <div class="flex justify-between items-center mt-2">
                                     <span class="font-bold text-md md:text-lg">R$ 10,00</span>
                                     <button onclick="addToOrder('Batata Frita Média', 10.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/porcao/batatas.jpg" alt="Imagem de Porção"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Pequenas Chips</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Uma porção pequena de
+                                    batatas chips crocantes.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 5,00</span>
+                                    <button onclick="addToOrder('Batata Frita Média', 5.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/porcao/batatas.jpg" alt="Imagem de Porção"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Batata Especial do Chef
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Batata frita 100% natural,
+                                    bacon, calabresa, molhos e queijo ralado.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 24,90</span>
+                                    <button onclick="addToOrder('Batata Frita Média', 24.90)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/porcao/batatas.jpg" alt="Imagem de Porção"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Bolinhos de Bacalhau 6
+                                    unid</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Uma porção de Bolinhos
+                                    especiais de bacalhau com 6 unidades.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 38,00</span>
+                                    <button onclick="addToOrder('Batata Frita Média', 38.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/porcao/batatas.jpg" alt="Imagem de Porção"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Bolinhos de Aipim com
+                                    Costela desfiada 6 unid</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Uma porção de Bolinhos
+                                    especiais de Aipim com Costela desfiada com 6 unidades.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 24,00</span>
+                                    <button onclick="addToOrder('Batata Frita Média', 24.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/porcao/batatas.jpg" alt="Imagem de Porção"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Bolinhos de Camarão 6
+                                    unid</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Uma porção de Bolinhos
+                                    especiais de Camarão com 6 unidades.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 24,00</span>
+                                    <button onclick="addToOrder('Batata Frita Média', 24.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/porcao/batatas.jpg" alt="Imagem de Porção"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Bolinhos Carioca 6 unid
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Uma porção de Bolinhos
+                                    especiais Carioca com 6 unidades.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 24,00</span>
+                                    <button onclick="addToOrder('Batata Frita Média', 24.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/porcao/batatas.jpg" alt="Imagem de Porção"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Bolinhos de Queijo 6
+                                    unid</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Uma porção de Bolinhos
+                                    especiais de Queijo com 6 unidades.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 24,00</span>
+                                    <button onclick="addToOrder('Batata Frita Média', 24.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/porcao/batatas.jpg" alt="Imagem de Porção"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Bolinhos de Frango e
+                                    Queijo 6 unid</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Uma porção de Bolinhos
+                                    especiais de frango e queijo com 6 unidades.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 24,00</span>
+                                    <button onclick="addToOrder('Batata Frita Média', 24.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/porcao/batatas.jpg" alt="Imagem de Porção"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Mix de bolinhos 12 unid
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Uma porção de Bolinhos
+                                    especiais de todos os sabores com 12 unidades.</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 45,00</span>
+                                    <button onclick="addToOrder('Batata Frita Média', 45.00)"
                                         class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
                                             class="fas fa-plus md:mr-2"></i><span
                                             class="hidden md:inline">Adicionar</span></button>
@@ -377,10 +696,10 @@
                     <h2 class="text-3xl font-bold mb-6 border-l-4 border-orange-500 pl-4 category-title">Combos</h2>
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Combo" alt="Imagem de Combo"
+                            <img src="imagens/combos/combo.jpg" alt="Imagem de Combo"
                                 class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
-                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">#01 Especial Maná</h3>
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">01 Especial Maná</h3>
                                 <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Hambúrguer + Batata chips +
                                     Refrigerante copo.</p>
                                 <div class="flex justify-between items-center mt-2">
@@ -393,10 +712,10 @@
                             </div>
                         </div>
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Combo" alt="Imagem de Combo"
+                            <img src="imagens/combos/combo.jpg" alt="Imagem de Combo"
                                 class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
-                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">#02 Duplo Cheese</h3>
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">02 Duplo Cheese</h3>
                                 <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Duplo Cheese + Ks + Batata
                                     Chips.</p>
                                 <div class="flex justify-between items-center mt-2">
@@ -409,10 +728,26 @@
                             </div>
                         </div>
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Combo" alt="Imagem de Combo"
+                            <img src="imagens/combos/combo.jpg" alt="Imagem de Combo"
                                 class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
-                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">#04 Pastel</h3>
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">03 Manassanduba</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Sanduiche + Ks + Batata Chips
+                                </p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 33,00</span>
+                                    <button onclick="addToOrder('#02 Duplo Cheese', 33.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/combos/combo.jpg" alt="Imagem de Combo"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">04 Pastel</h3>
                                 <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Pastel + Refrigerante
                                     coca-cola ks.</p>
                                 <div class="flex justify-between items-center mt-2">
@@ -425,15 +760,46 @@
                             </div>
                         </div>
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Combo" alt="Imagem de Combo"
+                            <img src="imagens/combos/combo.jpg" alt="Imagem de Combo"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">05 Familia Neves</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">4 Hambúrguer + 1 Porção de
+                                    batata grande + 1 Refrigerante de 1 l</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 54,00</span>
+                                    <button onclick="addToOrder('#02 Duplo Cheese', 54.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/combos/combo.jpg" alt="Imagem de Combo"
                                 class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">#06 Duplo Maná</h3>
                                 <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">2 Hambúrguer + Porção batata
-                                    G + 2 Refrigerantes Ks.</p>
+                                    grande + 2 Refrigerantes Ks.</p>
                                 <div class="flex justify-between items-center mt-2">
                                     <span class="font-bold text-md md:text-lg">R$ 40,00</span>
                                     <button onclick="addToOrder('#06 Duplo Maná', 40.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/combos/combo.jpg" alt="Imagem de Combo"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">07 Perfeitinho</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">1 Hambúrguer + Milk Shake</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 22,00</span>
+                                    <button onclick="addToOrder('#02 Duplo Cheese', 22.00)"
                                         class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
                                             class="fas fa-plus md:mr-2"></i><span
                                             class="hidden md:inline">Adicionar</span></button>
@@ -447,75 +813,94 @@
                     <h2 class="text-3xl font-bold mb-6 border-l-4 border-orange-500 pl-4 category-title">Sobremesas</h2>
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Sobremesa"
-                                alt="Imagem de Sobremesa" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/sobremesas/pudim.jpg" alt="Imagem de Sobremesa"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Pudim</h3>
-                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Pudim de leite condensado
-                                    cremoso e delicioso.</p>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">
+                                    Pudim de leite condensado cremoso e delicioso.
+                                </p>
                                 <div class="flex justify-between items-center mt-2">
                                     <span class="font-bold text-md md:text-lg">R$ 10,00</span>
-                                    <button onclick="addToOrder('Pudim', 10.00)"
-                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
-                                            class="fas fa-plus md:mr-2"></i><span
-                                            class="hidden md:inline">Adicionar</span></button>
+                                    <button onclick="addToOrder('Pudim', 10.00)" class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg 
+                                        hover:bg-orange-600 transition-colors text-sm md:text-base">
+                                        <i class="fas fa-plus md:mr-2"></i>
+                                        <span class="hidden md:inline">Adicionar</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Sobremesa"
-                                alt="Imagem de Sobremesa" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/sobremesas/pudim.jpg" alt="Imagem de Sobremesa"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Maná no Pote</h3>
-                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Deliciosa sobremesa cremosa
-                                    servida no pote.</p>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">
+                                    Deliciosa sobremesa cremosa servida no pote.
+                                </p>
                                 <div class="flex justify-between items-center mt-2">
                                     <span class="font-bold text-md md:text-lg">R$ 12,90</span>
-                                    <button onclick="addToOrder('Maná no Pote', 12.90)"
-                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
-                                            class="fas fa-plus md:mr-2"></i><span
-                                            class="hidden md:inline">Adicionar</span></button>
+                                    <button onclick="addToOrder('Maná no Pote', 12.90)" class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg 
+                                        hover:bg-orange-600 transition-colors text-sm md:text-base">
+                                        <i class="fas fa-plus md:mr-2"></i>
+                                        <span class="hidden md:inline">Adicionar</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Sobremesa"
-                                alt="Imagem de Sobremesa" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/sobremesas/pudim.jpg" alt="Imagem de Sobremesa"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Maná Brownie</h3>
-                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Brownie de chocolate com
-                                    sorvete.</p>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">
+                                    Brownie de chocolate com sorvete.
+                                </p>
                                 <div class="flex justify-between items-center mt-2">
                                     <span class="font-bold text-md md:text-lg">R$ 12,90</span>
-                                    <button onclick="addToOrder('Maná Brownie', 12.90)"
-                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
-                                            class="fas fa-plus md:mr-2"></i><span
-                                            class="hidden md:inline">Adicionar</span></button>
+                                    <button onclick="addToOrder('Maná Brownie', 12.90)" class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg 
+                                        hover:bg-orange-600 transition-colors text-sm md:text-base">
+                                        <i class="fas fa-plus md:mr-2"></i>
+                                        <span class="hidden md:inline">Adicionar</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Sobremesas Geladas -->
+                <div id="sobremesas_geladas" class="pt-4 pb-12 mb-12 border-b border-orange-900/50">
+                    <h2 class="text-3xl font-bold mb-6 border-l-4 border-orange-500 pl-4 category-title">
+                        Sobremesas Geladas
+                    </h2>
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Sobremesa"
-                                alt="Imagem de Sobremesa" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/sobremesas_geladas/gelados.jpg" alt="Imagem de Sobremesa"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Manazão 300ml</h3>
-                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Sobremesa gelada (chocolate,
-                                    doce de leite, morango, maracujá).</p>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">
+                                    Sobremesa gelada (chocolate, doce de leite, morango, maracujá).
+                                </p>
                                 <div class="flex justify-between items-center mt-2">
                                     <span class="font-bold text-md md:text-lg">R$ 12,00</span>
-                                    <button onclick="addToOrder('Manazão 300ml', 12.00)"
-                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
-                                            class="fas fa-plus md:mr-2"></i><span
-                                            class="hidden md:inline">Adicionar</span></button>
+                                    <button onclick="addToOrder('Manazão 300ml', 12.00)" class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg 
+                                        hover:bg-orange-600 transition-colors text-sm md:text-base">
+                                        <i class="fas fa-plus md:mr-2"></i>
+                                        <span class="hidden md:inline">Adicionar</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Sobremesa"
-                                alt="Imagem de Sobremesa" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/sobremesas_geladas/gelados.jpg" alt="Imagem de Sobremesa"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
-                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Manazinho 200ml</h3>
-                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Sobremesa gelada (chocolate,
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Manazinho 200ml
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Sobremesa gelada
+                                    (chocolate,
                                     doce de leite, morango, maracujá).</p>
                                 <div class="flex justify-between items-center mt-2">
                                     <span class="font-bold text-md md:text-lg">R$ 8,90</span>
@@ -527,11 +912,30 @@
                             </div>
                         </div>
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=A%C3%A7a%C3%AD"
-                                alt="Imagem de Açaí" class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/sobremesas_geladas/gelados.jpg" alt="Imagem de Sobremesa"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Manazito 150ml
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Sobremesa gelada
+                                    (chocolate,
+                                    doce de leite, morango, maracujá).</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 6,90</span>
+                                    <button onclick="addToOrder('Manazinho 200ml', 6.90)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/sobremesas_geladas/gelados.jpg" alt="Imagem de Açaí"
+                                class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Manáçaí</h3>
-                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">O melhor açaí da região,
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">O melhor açaí da
+                                    região,
                                     cremoso e saboroso.</p>
                                 <div class="flex justify-between items-center mt-2">
                                     <span class="font-bold text-md md:text-lg">R$ 12,90</span>
@@ -544,20 +948,468 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Bebidas -->
                 <div id="bebidas" class="pt-4">
                     <h2 class="text-3xl font-bold mb-6 border-l-4 border-orange-500 pl-4 category-title">Bebidas</h2>
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
                         <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <img src="https://placehold.co/600x400/000000/f97316?text=Bebida" alt="Imagem de Bebida"
-                                class="w-full h-32 md:h-48 object-cover">
+                            <img src="imagens/bebidas/bebidas.jpg" class="w-full h-32 md:h-48 object-cover">
                             <div class="p-3 md:p-4 flex flex-col flex-grow">
                                 <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Refrigerante Lata</h3>
-                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Escolha entre Coca-cola,
-                                    Guaraná, etc.</p>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Refrigerantes</p>
                                 <div class="flex justify-between items-center mt-2">
                                     <span class="font-bold text-md md:text-lg">R$ 6,00</span>
                                     <button onclick="addToOrder('Refrigerante Lata', 6.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Guaraná Antártica 1L
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Refrigerantes</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 9,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 9.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Coca Cola 1L</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Refrigerantes</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 10,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 10.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Coca Cola 500ml</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Refrigerantes</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 8,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 8.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Coca Cola Lata</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Refrigerantes</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 7,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 7.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Coca Cola KS</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Refrigerantes</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 5,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 5.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Água sem Gás</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Água</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 2,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 2.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Água com Gás</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Água</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 4,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 4.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Café expresso</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Café</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 5,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 5.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Cappuccino</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Cappuccino</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 9,90</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 9.90)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Chocolate Quente</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Chocolate Quente</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 9,90</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 9.90)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Suco natural da fruta
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Suco Natural</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 8,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 8.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Suco natural da fruta
+                                    com Leite</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Suco natural com leite</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 10,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 10.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Milk Shake de Chocolate
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Milk Shake</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 14,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 14.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Milk Shake de Morango
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Milk Shake</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 14,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 14.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Milk Shake de Cappuccino
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Milk Shake</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 14,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 14.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Milk Shake de Ovo
+                                    Maltine</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Milk Shake</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 14,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 14.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Milk Shake de Baunilha
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Milk Shake</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 14,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 14.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Cerveja Amstel Slin</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Cervejas</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 10,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 10.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Cerveja Budweiser Slin
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Cervejas</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 10,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 10.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Cerveja Heineken Slin
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Cervejas</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 10,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 10.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Cerveja Amstel Latão
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Cervejas</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 10,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 10.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Vinho Suave nacionl</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Vinhos</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 30,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 30.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Taça de Vinho</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Vinhos</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 10,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 10.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Garrafa de vinho
+                                    Português</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Vinhos</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 30,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 30.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Garrafa de vinho
+                                    Argentino</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Vinhos</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 30,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 30.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Garrafa de vinho Chileno
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Vinhos</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 30,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 30.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Dose de Whisky Red Label
+                                </h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Whisky</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 12,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 12.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Dose de Dreher</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Whisky</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 6,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 6.00)"
+                                        class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
+                                            class="fas fa-plus md:mr-2"></i><span
+                                            class="hidden md:inline">Adicionar</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bg rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="imagens/bebidas/bebidas.jpg" alt="Imagem de Bebida"
+                                class="w-full h-32 md:h-48 object-cover">
+                            <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-base md:text-xl mb-1 text-orange-400">Drink's</h3>
+                                <p class="text-gray-400 text-xs md:text-sm mb-2 flex-grow">Drink's</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-md md:text-lg">R$ 18,00</span>
+                                    <button onclick="addToOrder('Refrigerante Lata', 18.00)"
                                         class="bg-orange-500 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base"><i
                                             class="fas fa-plus md:mr-2"></i><span
                                             class="hidden md:inline">Adicionar</span></button>
@@ -656,7 +1508,7 @@
 
     <!-- Menu Inferior (Mobile) -->
     <div id="bottom-nav"
-        class="md:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-orange-800 flex justify-around items-center p-2 z-30">
+        class="md:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-orange-800 flex justify-around items-center py-3 px-2 z-30">
         <button id="bottom-nav-menu"
             class="bottom-nav-btn flex flex-col items-center text-gray-300 hover:text-orange-500 transition-colors active">
             <i class="fas fa-utensils text-xl"></i><span class="text-xs mt-1">Cardápio</span>
@@ -671,6 +1523,46 @@
             <span id="bottom-cart-count"
                 class="absolute -top-1 -right-1 bg-red-600 text-xs font-semibold rounded-full h-5 w-5 flex items-center justify-center">0</span>
         </button>
+        <button id="bottom-nav-info"
+            class="bottom-nav-btn flex flex-col items-center text-gray-300 hover:text-orange-500 transition-colors">
+            <i class="fas fa-info-circle text-xl"></i><span class="text-xs mt-1">Info</span>
+        </button>
+    </div>
+
+    <!-- Tela de Informações -->
+    <div id="info-page" class="hidden">
+        <div class="container mx-auto p-6">
+            <div class="card-bg rounded-lg shadow-2xl p-8 max-w-2xl mx-auto">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-info-circle text-orange-500 text-3xl mr-4"></i>
+                    <h2 class="text-3xl font-bold text-white">Sobre o Maná</h2>
+                </div>
+                <div class="space-y-6 text-gray-300">
+                    <div>
+                        <h3 class="font-semibold text-lg text-orange-400 mb-2">Endereço</h3>
+                        <p>Rua Exemplo, 123 - Centro, Sua Cidade - PE</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-orange-400 mb-2">Horário de Funcionamento</h3>
+                        <p>Terça a Domingo: 18:00h - 23:00h</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-orange-400 mb-2">Contato</h3>
+                        <p><i class="fab fa-whatsapp mr-2"></i>(87) 99990-4732</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-orange-400 mb-2">Siga-nos</h3>
+                        <a href="#" class="hover:text-orange-500"><i
+                                class="fab fa-instagram mr-2"></i>@suan_charcutaria_mana_snackhouse</a>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-gray-700 flex justify-end">
+                    <button id="back-to-menu-btn"
+                        class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors w-full sm:w-auto"><i
+                            class="fas fa-arrow-left mr-2"></i>Voltar ao Cardápio</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Modal de Categorias (Mobile) -->
@@ -694,6 +1586,8 @@
                     class="modal-category-link text-lg text-gray-300 hover:text-orange-500 py-2">Combos</a>
                 <a href="#sobremesas"
                     class="modal-category-link text-lg text-gray-300 hover:text-orange-500 py-2">Sobremesas</a>
+                <a href="#sobremesas_geladas"
+                    class="modal-category-link text-lg text-gray-300 hover:text-orange-500 py-2">Sobremesas Geladas</a>
                 <a href="#bebidas"
                     class="modal-category-link text-lg text-gray-300 hover:text-orange-500 py-2">Bebidas</a>
             </div>
@@ -810,6 +1704,7 @@
 
             const menuPage = document.getElementById('menu-page');
             const orderPage = document.getElementById('order-page');
+            const infoPage = document.getElementById('info-page');
             const headerViewOrderBtn = document.getElementById('header-view-order-btn');
             const addMoreBtn = document.getElementById('add-more-btn');
             const cancelOrderBtn = document.getElementById('cancel-order-btn');
@@ -828,6 +1723,8 @@
             const bottomNavMenuBtn = document.getElementById('bottom-nav-menu');
             const bottomNavCategoriesBtn = document.getElementById('bottom-nav-categories');
             const bottomNavOrderBtn = document.getElementById('bottom-nav-order');
+            const bottomNavInfoBtn = document.getElementById('bottom-nav-info');
+            const backToMenuBtn = document.getElementById('back-to-menu-btn');
             const categoryModal = document.getElementById('category-modal');
             const categoryModalContent = document.getElementById('category-modal-content');
             const closeCategoryModalBtn = document.getElementById('close-category-modal');
@@ -837,9 +1734,17 @@
 
             window.showPage = function (pageId) {
                 const isMenu = pageId === 'menu-page';
+                const isOrder = pageId === 'order-page';
+                const isInfo = pageId === 'info-page';
+
                 menuPage.classList.toggle('hidden', !isMenu);
-                orderPage.classList.toggle('hidden', isMenu);
-                updateBottomNavActiveState(isMenu ? 'menu' : 'order');
+                orderPage.classList.toggle('hidden', !isOrder);
+                infoPage.classList.toggle('hidden', !isInfo);
+
+                if (isMenu) updateBottomNavActiveState('menu');
+                if (isOrder) updateBottomNavActiveState('order');
+                if (isInfo) updateBottomNavActiveState('info');
+
                 window.scrollTo(0, 0);
             }
 
@@ -994,10 +1899,12 @@
                 bottomNavMenuBtn.classList.toggle('active', activeState === 'menu');
                 bottomNavCategoriesBtn.classList.toggle('active', activeState === 'categories');
                 bottomNavOrderBtn.classList.toggle('active', activeState === 'order');
+                bottomNavInfoBtn.classList.toggle('active', activeState === 'info');
             }
 
             headerViewOrderBtn.addEventListener('click', () => showPage('order-page'));
             addMoreBtn.addEventListener('click', () => showPage('menu-page'));
+            backToMenuBtn.addEventListener('click', () => showPage('menu-page'));
             cancelOrderBtn.addEventListener('click', () => {
                 if (confirm('Tem certeza que deseja cancelar o pedido e limpar seu carrinho?')) {
                     orderItems = [];
@@ -1008,8 +1915,9 @@
             submitOrderBtn.addEventListener('click', () => {
                 const message = generateWhatsAppMessage();
                 if (message) {
-                    const phoneNumber = '5587999904732';
-                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+                    const phoneNumber = '5587920008169';
+                    const whatsappUrl = `httpshttps://wa.me/${phoneNumber}?text=${message}`;
+                    window.open(whatsappUrl, '_blank');
                     confirmationModal.classList.remove('hidden');
                 }
             });
@@ -1035,6 +1943,7 @@
                 updateBottomNavActiveState('categories');
             });
             bottomNavOrderBtn.addEventListener('click', () => showPage('order-page'));
+            bottomNavInfoBtn.addEventListener('click', () => showPage('info-page'));
             closeCategoryModalBtn.addEventListener('click', () => toggleCategoryModal(false));
             categoryModal.addEventListener('click', (e) => {
                 if (e.target === categoryModal) {
